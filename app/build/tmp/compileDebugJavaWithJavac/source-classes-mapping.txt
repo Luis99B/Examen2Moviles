@@ -1,0 +1,16 @@
+mx/itesm/luisbodart_gerareyes/GameObject.java
+ mx.itesm.luisbodart_gerareyes.GameObject
+mx/itesm/luisbodart_gerareyes/JuegoRequest.java
+ mx.itesm.luisbodart_gerareyes.JuegoRequest
+mx/itesm/luisbodart_gerareyes/JuegoAdapter.java
+ mx.itesm.luisbodart_gerareyes.JuegoAdapter
+ mx.itesm.luisbodart_gerareyes.JuegoAdapter$ViewHolder
+ mx.itesm.luisbodart_gerareyes.JuegoAdapter$onItemListener
+mx/itesm/luisbodart_gerareyes/JuegoFragment.java
+ mx.itesm.luisbodart_gerareyes.JuegoFragment
+mx/itesm/luisbodart_gerareyes/BuildConfig.java
+ mx.itesm.luisbodart_gerareyes.BuildConfig
+mx/itesm/luisbodart_gerareyes/MainActivity.java
+ mx.itesm.luisbodart_gerareyes.MainActivity
+mx/itesm/luisbodart_gerareyes/PeliculaFragment.java
+ mx.itesm.luisbodart_gerareyes.PeliculaFragment

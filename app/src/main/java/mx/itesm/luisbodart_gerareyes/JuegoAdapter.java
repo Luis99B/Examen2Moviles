@@ -52,7 +52,7 @@ public class JuegoAdapter extends RecyclerView.Adapter<JuegoAdapter.ViewHolder> 
         this.items = items;
     }
 
-    public void updateList (List<GameObject> newList) {
+    public void updateList(List<GameObject> newList) {
         if (newList != null && newList.size() > 0) {
             this.items.clear();
             this.items.addAll(newList);
@@ -60,7 +60,7 @@ public class JuegoAdapter extends RecyclerView.Adapter<JuegoAdapter.ViewHolder> 
         }
     }
 
-    public void updateJSON (String json) {
+    public void updateJSON(String json) {
         try {
             JSONArray data = new JSONArray(json);
             List<GameObject> newList = new ArrayList<GameObject>();
@@ -69,12 +69,13 @@ public class JuegoAdapter extends RecyclerView.Adapter<JuegoAdapter.ViewHolder> 
                 JSONObject object = data.getJSONObject(i);
                 String nombre = object.getString("nombre"),
                         anio = object.getString("anio");
-                JSONArray JSONplataformas = (JSONArray) object.get("plataformas");
-                String[] plataformas = new String[JSONplataformas.length()];
-                for (int j=0;i<plataformas.length;i++){
+                String plataformas = object.getString("plataformas");
+                /*JSONArray JSONplataformas = (JSONArray) object.get("plataformas");
+                String[] plataformas = new String[JSONplataformas.length()-1];
+                for (int j = 0; i < plataformas.length; i++) {
                     plataformas[j] = JSONplataformas.getString(j);
 
-                }
+                }*/
                 newList.add(new GameObject(nombre, anio, plataformas));
             }
             updateList(newList);
@@ -83,7 +84,7 @@ public class JuegoAdapter extends RecyclerView.Adapter<JuegoAdapter.ViewHolder> 
         }
     }
 
-    public GameObject getElementList (int pos) {
+    public GameObject getElementList(int pos) {
         if (this.items != null && pos > -1 && pos <= this.items.size() - 1) {
             return this.items.get(pos);
         } else {
@@ -110,7 +111,8 @@ public class JuegoAdapter extends RecyclerView.Adapter<JuegoAdapter.ViewHolder> 
         void bindData(final GameObject item) {
             this.nombre.setText(item.getNombre());
             this.anio.setText(item.getAnio());
-            this.plataformas.setText(Arrays.toString(item.getPlataformas()));;
+            this.plataformas.setText(item.getPlataformas());
+            ;
         }
 
         @Override
@@ -122,3 +124,4 @@ public class JuegoAdapter extends RecyclerView.Adapter<JuegoAdapter.ViewHolder> 
     public interface onItemListener {
         void onItemClick(int pos);
     }
+}
