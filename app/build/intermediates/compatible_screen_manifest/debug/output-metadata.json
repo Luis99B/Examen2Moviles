@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "COMPATIBLE_SCREEN_MANIFEST",
+    "kind": "Directory"
+  },
+  "applicationId": "mx.itesm.luisbodart_gerareyes",
+  "variantName": "debug",
+  "elements": []
+}
