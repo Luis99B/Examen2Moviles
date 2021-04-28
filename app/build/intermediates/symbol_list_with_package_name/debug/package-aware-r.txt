@@ -1773,7 +1773,6 @@ id beginning
 id blocking
 id bottom
 id bounce
-id button
 id buttonPanel
 id cache_measures
 id cancel_button
@@ -2080,6 +2079,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toastButton
 id toggle
 id top
 id topPanel

@@ -75,6 +75,8 @@ public class JuegoFragment extends Fragment implements  Handler.Callback, JuegoA
 
     }
 
+
+
     public void requestThread() {
         JuegoRequest req = new JuegoRequest("https://bitbucket.org/itesmguillermorivas/partial2/raw/a6640dfc9d3f47462e6b2d009ff9e5dee292f6fa/videojuegos.json", this.handler);
         req.start();

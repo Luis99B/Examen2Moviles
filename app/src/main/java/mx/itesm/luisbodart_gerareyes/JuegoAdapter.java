@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +32,7 @@ public class JuegoAdapter extends RecyclerView.Adapter<JuegoAdapter.ViewHolder> 
         this.context = context;
         this.items = items;
         this.onItemListener = onItemListener;
+
     }
 
     @Override
@@ -97,6 +100,8 @@ public class JuegoAdapter extends RecyclerView.Adapter<JuegoAdapter.ViewHolder> 
                 anio,
                 plataformas;
         onItemListener onItemListener;
+        Button toastButton;
+
 
         ViewHolder(View itemView, onItemListener onItemListener) {
             super(itemView);
@@ -104,8 +109,20 @@ public class JuegoAdapter extends RecyclerView.Adapter<JuegoAdapter.ViewHolder> 
             this.nombre = itemView.findViewById(R.id.nombre);
             this.anio = itemView.findViewById(R.id.anio);
             this.plataformas = itemView.findViewById(R.id.plataformas);
+            this.toastButton= itemView.findViewById(R.id.toastButton);
+            this.toastButton.setOnClickListener(new View.OnClickListener() {
 
+                public void onClick(View v) {
+                    makeToast();
+                }
+
+            });
             itemView.setOnClickListener(this);
+        }
+
+        void makeToast(){
+            Toast.makeText(context,this.nombre.getText().toString(),Toast.LENGTH_SHORT).show();
+
         }
 
         void bindData(final GameObject item) {
